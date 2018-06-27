@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">{{ title }}</mat-toolbar>
+
+<ng-container [ngSwitch]="isLoading">
+    <img class="app-loader" src="images/loader.svg" *ngSwitchCase="true">
+
+    <div class="app" *ngSwitchCase="false">
+        <div class="app-section">
+            <summary-table class="app-section__table" [data]="data" name="Unsorted"></summary-table>
+        </div>
+
+        <div class="app-section">
+            <ng-container *ngFor="let tableName of tablesSorted">
+                <summary-table class="app-section__table" [name]="tableName"></summary-table>
+            </ng-container>
+        </div>
+    </div>
+</ng-container>

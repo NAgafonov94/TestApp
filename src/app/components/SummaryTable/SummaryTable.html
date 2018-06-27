@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">{{name}}</mat-toolbar>
+
+<div [ngSwitch]="data && data.length > 0" (onDropSuccess)="dropSuccess($event)" dnd-droppable>
+    <table class="summary-table mat-elevation-z8"
+           [dataSource]="data"
+           *ngSwitchCase="true"
+           mat-table>
+        <ng-container *ngFor="let column of columns">
+            <ng-container [matColumnDef]="column.name">
+                <th mat-header-cell *matHeaderCellDef> {{ column.label }} </th>
+
+                <td mat-cell *matCellDef="let element"> {{ element[column.name] }} </td>
+            </ng-container>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="getColumnNames()"></tr>
+
+        <tr class="summary-table__row"
+            *matRowDef="let row; columns: getColumnNames(); let index = index"
+            [dragData]="row"
+            [dragEnabled]="true"
+            (onDragSuccess)="dragSuccess(index)"
+            mat-row dnd-draggable></tr>
+    </table>
+
+    <mat-card class="summary-table-empty" *ngSwitchCase="false">Drop data here</mat-card>
+</div>

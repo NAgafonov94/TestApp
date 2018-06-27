@@ -1,0 +1,27 @@
+[
+  {
+    "summary": "1 summary",
+    "fromEmail": "test@test.com",
+    "date": "01.01.2000"
+  },{
+    "summary": "2 summary",
+    "fromEmail": "test@test.com",
+    "date": "01.01.2000"
+  },{
+    "summary": "3 summary",
+    "fromEmail": "test@test.com",
+    "date": "01.01.2000"
+  },{
+    "summary": "4 summary",
+    "fromEmail": "test@test.com",
+    "date": "01.01.2000"
+  },{
+    "summary": "5 summary",
+    "fromEmail": "test@test.com",
+    "date": "01.01.2000"
+  },{
+    "summary": "6 summary",
+    "fromEmail": "test@test.com",
+    "date": "01.01.2000"
+  }
+]
